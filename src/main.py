@@ -41,7 +41,6 @@ def sort(width: float, height: float, length: int, mass: float) -> str:
     heavy = mass >= MAX_MASS
     if bulky and heavy:
         return PackageStack.REJECTED
-    elif bulky or heavy:
+    if bulky or heavy:
         return PackageStack.SPECIAL
-    else:
-        return PackageStack.STANDARD
+    return PackageStack.STANDARD
